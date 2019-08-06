@@ -10,10 +10,12 @@ OPT = s
 SRC = \
 			main.c \
 			driver_spi/spi.c \
+			driver_mcp2515/mcp2515.c \
 
 # Include directories
 INC = \
 			driver_spi \
+			driver_mcp2515 \
 
 # FLAGS
 CFLAGS = \
