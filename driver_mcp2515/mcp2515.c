@@ -114,8 +114,6 @@ int mcp2515_sendFrame(uint8_t isExtended, uint8_t isRtr, uint32_t id,
     }
 
     // Frame ID
-    writeRegisterBits(ctrl, ((1<<TXP1) | (1<<TXP0)),
-                            ((1<<TXP1) | (1<<TXP0)));
     spi_slaveActivate();
     spi_write(loadInstr);
     uint8_t sIdH = 0;
