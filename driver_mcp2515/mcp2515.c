@@ -211,12 +211,6 @@ int mcp2515_readFrame(uint32_t *id, uint8_t data[CAN_DATA_MAX_LENGTH],
     }
     spi_slaveInactivate();
 
-    // Set the buffer as read
-    if (rxBuffer == 0)
-        writeRegisterBits(CANINTF, (1<<RX0IF), (1<<RX0IF));
-    else
-        writeRegisterBits(CANINTF, (1<<RX1IF), (1<<RX1IF));
-
     return length;
 }
 
