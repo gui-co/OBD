@@ -18,6 +18,11 @@ void usart_init(unsigned int baudRate);
 //! @param[in] data Byte to write on the USART.
 void usart_write(uint8_t data);
 
+//! Write a string on USART. The string has to be NULL terminated. At the end,
+//! a CRLF is written.
+//! @param[in] data A NULL terminated string.
+void usart_writeString(char *data);
+
 //! Read data from the USART.
 //! @return Read data.
 uint8_t usart_read(void);

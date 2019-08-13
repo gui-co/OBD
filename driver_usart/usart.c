@@ -24,6 +24,13 @@ void usart_write(uint8_t data) {
     UDR0 = data;
 }
 
+void usart_writeString(char *data) {
+    while (*data)
+        usart_write(*data++);
+    usart_write('\r');
+    usart_write('\n');
+}
+
 uint8_t usart_read(void) {
     while(!((UCSR0A) & (1<<UDRE0)))
         ;
